@@ -36,9 +36,13 @@ app.get("/:id",async (req,res)=>{
   // console.log("results: ",body)
 
   const userId = req.params.id;
+  console.log("userid: ",userId)
   const guildMemberURL = `https://discord.com/api/guilds/${guildId}/members/${userId}`;
+  console.log("guildMemberURL: ",guildMemberURL)
   const mem = await request(guildMemberURL,{method:"GET",headers})
+  console.log("mem: ",mem)
   const members = await mem.body.json()
+  console.log("members: ",members)
   if(members.roles){
     members.roles.map(memberRole=>{
       console.log("memberRole: ",memberRole, " wlId: ", wlId)
