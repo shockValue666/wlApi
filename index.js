@@ -100,7 +100,7 @@ app.get("/addRole/:id",async (req,res)=>{
   //id of test role = 1054914485464350740
   const userId = req.params.id;
   console.log("userid: ",userId)
-  const url = `https://discord.com/api/guilds/978311819384987688/members/${userId}/roles/1054914485464350740`;
+  const url = `https://discord.com/api/guilds/978311819384987688/members/${userId}/roles/${wlId}`;
     const options = {
       method: 'PUT',
       headers: {
